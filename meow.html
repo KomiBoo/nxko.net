@@ -1,0 +1,87 @@
+<html>
+	<head>
+		<title> meow </title>
+
+		<style>
+			body {
+				text-align: center;
+				background-color:black;
+				text-shadow: 2px 2px 2px indigo;
+				color: white;
+			}
+			a {
+				color: purple;
+				text-shadow: 2px 2px 5px purple;
+				transition-duration: 0.9s;
+				text-decoration: none;
+			}
+			a:hover {
+				color:pink;
+				text-decoration: underline;
+			}
+		</style>
+
+		
+		<script>
+        let title = document.title;
+        let currentText = '';
+        let typingSpeed = 150; // Speed of typing
+        let backspaceSpeed = 100; // Speed of backspacing
+        let textArray = ["nxko.net", "meoww"];
+        let textIndex = 0;
+        let charIndex = 0;
+
+        function typeTitle() {
+            if (charIndex < textArray[textIndex].length) {
+                currentText += textArray[textIndex].charAt(charIndex);
+                document.title = currentText;
+                charIndex++;
+                setTimeout(typeTitle, typingSpeed);
+            } else {
+                setTimeout(backspaceTitle, 1000);
+            }
+        }
+        function backspaceTitle() {
+            if (charIndex > 0) {
+                currentText = currentText.slice(0, -1);
+                document.title = currentText;
+                charIndex--;
+                setTimeout(backspaceTitle, backspaceSpeed);
+            } else {
+                textIndex = (textIndex + 1) % textArray.length;
+                setTimeout(typeTitle, 500);
+            }
+        }
+        window.onload = function() {
+            typeTitle();
+        };
+    	</script>
+
+		
+	</head>
+
+  <body>
+    <h1>how to make me happy, or sad</h1>
+    <p>idk how to phrase things sometimes.</p>
+    <u><h3>trigger happy emtoions (?)</h3></u>
+    <p>sleeping</p>
+    <p>wifi</p>
+    <p>love</p>
+    <p>MONEYYYYYYYYYYYYYYYYYYYYYYYYY</p>
+
+    <br>
+
+    <br>
+
+    <u><h3>trigger bad emotions!! grrr!! (?)</h3></u>
+    <p>ignoring me</p>
+    <p>saying im "overreacting"</p>
+    <p>hating me (everyone still does it)</p>
+    <p>just living in general sometimes</p>
+
+    <br>
+
+    <br>
+
+    <p><a href="https://www.nhs.uk/mental-health/conditions/borderline-personality-disorder/overview/">ahem ahem ahem</a></p>
+  </body>
