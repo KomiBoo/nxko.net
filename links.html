@@ -1,0 +1,78 @@
+<html>
+	<head>
+		<title> links </title>
+
+		<style>
+			body {
+				text-align: center;
+				background-color:black;
+				text-shadow: 2px 2px 2px indigo;
+				color: white;
+			}
+			a {
+				color: purple;
+				text-shadow: 2px 2px 5px purple;
+				transition-duration: 0.9s;
+				text-decoration: none;
+			}
+			a:hover {
+				color:pink;
+				text-decoration: underline;
+			}
+		</style>
+
+		
+		<script>
+        let title = document.title;
+        let currentText = '';
+        let typingSpeed = 150; // Speed of typing
+        let backspaceSpeed = 100; // Speed of backspacing
+        let textArray = ["nxko.net", "links"];
+        let textIndex = 0;
+        let charIndex = 0;
+
+        function typeTitle() {
+            if (charIndex < textArray[textIndex].length) {
+                currentText += textArray[textIndex].charAt(charIndex);
+                document.title = currentText;
+                charIndex++;
+                setTimeout(typeTitle, typingSpeed);
+            } else {
+                setTimeout(backspaceTitle, 1000);
+            }
+        }
+        function backspaceTitle() {
+            if (charIndex > 0) {
+                currentText = currentText.slice(0, -1);
+                document.title = currentText;
+                charIndex--;
+                setTimeout(backspaceTitle, backspaceSpeed);
+            } else {
+                textIndex = (textIndex + 1) % textArray.length;
+                setTimeout(typeTitle, 500);
+            }
+        }
+        window.onload = function() {
+            typeTitle();
+        };
+    	</script>
+
+		
+	</head>
+
+  <body>
+    <h1>Links</h1>
+    <p>GitHub: <a href="https://github.com/komiboo">KomiBoo</a></p>
+    <p>TeleGram: <a href="https://t.me/komiboo">also komiboo</a></p>
+    <p>telegram channel: <a href="https://t.me/thighpictures">ThighPictures</a></p>
+    <p>twitter: <a href="https://x.com/slittinghearts">slittinghearts</a></p>
+    
+    <br>
+    <hr>
+    <br>
+    <h1> on nxko.net </h1>
+    <p><a href="aboutme.html">about me</a></p>
+    <p><a href="meow.html">triggers (?)</a></p>
+    <p><a href="pgp.html">pgp</a></p>
+    
+  </body>
