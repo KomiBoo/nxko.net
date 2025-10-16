@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<title> about me </title>
+
+		<style>
+			body {
+				text-align: center;
+				background-color:black;
+				text-shadow: 2px 2px 2px indigo;
+				color: white;
+			}
+			a {
+				color: purple;
+				text-shadow: 2px 2px 5px purple;
+				transition-duration: 0.9s;
+				text-decoration: none;
+			}
+			a:hover {
+				color:pink;
+				text-decoration: underline;
+			}
+		</style>
+
+		
+		<script>
+        let title = document.title;
+        let currentText = '';
+        let typingSpeed = 150; // Speed of typing
+        let backspaceSpeed = 100; // Speed of backspacing
+        let textArray = ["nxko.net", "about me"];
+        let textIndex = 0;
+        let charIndex = 0;
+
+        function typeTitle() {
+            if (charIndex < textArray[textIndex].length) {
+                currentText += textArray[textIndex].charAt(charIndex);
+                document.title = currentText;
+                charIndex++;
+                setTimeout(typeTitle, typingSpeed);
+            } else {
+                setTimeout(backspaceTitle, 1000);
+            }
+        }
+        function backspaceTitle() {
+            if (charIndex > 0) {
+                currentText = currentText.slice(0, -1);
+                document.title = currentText;
+                charIndex--;
+                setTimeout(backspaceTitle, backspaceSpeed);
+            } else {
+                textIndex = (textIndex + 1) % textArray.length;
+                setTimeout(typeTitle, 500);
+            }
+        }
+        window.onload = function() {
+            typeTitle();
+        };
+    	</script>
+
+		
+	</head>
+
+  <body>
+    <h1>haiii</h1>
+    <p>im skye im 16 and from england</p>
+    <p>my only skills are "overreacting" and eeping</p>
+    <p><br>i was the most repped user on a hacker forum, i guess<br>uhhhhh</p>
+    <p>im learning python at school (boring) and c++ at home</p>
+    <br>
+    <p>im not very well mentally</p>
+  </body>
+
+	<body>
