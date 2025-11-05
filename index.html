@@ -35,14 +35,13 @@
 				color:pink;
 				text-decoration: underline;
 			}
-video {
-	display: none;
-	margin: 20px auto;
-	border-radius: 10px;
-	max-width: 80%;
-	height: auto;
-}
-
+			video {
+				display: none;
+				margin: 20px auto;
+				border-radius: 10px;
+				max-width: 80%;
+				height: auto;
+			}
 		</style>
 
 		<script>
@@ -64,6 +63,7 @@ video {
 				setTimeout(backspaceTitle, 1000);
 			}
 		}
+
 		function backspaceTitle() {
 			if (charIndex > 0) {
 				currentText = currentText.slice(0, -1);
@@ -83,18 +83,25 @@ video {
 
 	<body>
 		<!-- replaced audio with video -->
-		<video id="player" src="tt.mp4"></video>
+		<video id="player"></video>
 	  
 		<div id="overlay" onclick="fadeAndPlay()">
 			<h1> click to enter!!!! </h1>
 		</div>
 
 		<script>
+		// Randomly choose between 'tt.mp4' and 'bde.mp4'
+		const videoFiles = ['tt.mp4', 'bde.mp4'];
+		const randomVideo = videoFiles[Math.floor(Math.random() * videoFiles.length)];
+
+		// Set the chosen video source
+		const player = document.getElementById('player');
+		player.src = randomVideo;
+
 		function fadeAndPlay() {
 			const overlay = document.getElementById("overlay");
-			const player = document.getElementById("player");
 
-			player.volume = 0.1; // "yl" = low volume
+			player.volume = 1.0; // Set volume to max (1.0)
 			player.style.display = "block"; // show the video
 			player.play();
 
@@ -118,5 +125,6 @@ video {
 		<hr>
 		<br><br><br>
 		<img src="nxkonet.gif">
+		<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"9caeb77a26f54e5f99edcde06df750a5","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 	</body>
 </html>
