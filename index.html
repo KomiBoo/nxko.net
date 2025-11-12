@@ -1,0 +1,110 @@
+<html>
+  
+  <head>
+
+    <title>nxko.net - the best website since 1501</title>
+
+    <style>
+      body {
+				text-align: center;
+				background-color:black;
+				text-shadow: 2px 2px 2px indigo;
+				color: white;
+			}
+      a {
+				color: purple;
+				text-shadow: 2px 2px 5px purple;
+				transition-duration: 0.9s;
+				text-decoration: none;
+			}
+			a:hover {
+				color:pink;
+				text-decoration: underline;
+			}
+      #overlay {
+				position: fixed;
+				top: 0; left: 0;
+				width: 100%; height: 100%;
+				background-color: black;
+				z-index: 9999;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: opacity 1s ease;
+				cursor: pointer;
+			}
+			#overlay.fade-out {
+				opacity: 0;
+				pointer-events: none;
+			}
+    </style>
+    
+  </head>
+
+  <body>
+    <audio id="player"></audio>
+    <div id="overlay" onclick="fadeAndPlay()"><h1>Click to enter...</h1></div>
+    
+		<script>
+		let title = document.title;
+		let currentText = '';
+		let typingSpeed = 150;
+		let backspaceSpeed = 100;
+		let textArray = ["nxko.net", "meow", "im an angel!!"];
+		let textIndex = 0;
+		let charIndex = 0;
+
+		function typeTitle() {
+			if (charIndex < textArray[textIndex].length) {
+				currentText += textArray[textIndex].charAt(charIndex);
+				document.title = currentText;
+				charIndex++;
+				setTimeout(typeTitle, typingSpeed);
+			} else {
+				setTimeout(backspaceTitle, 1000);
+			}
+		}
+
+		function backspaceTitle() {
+			if (charIndex > 0) {
+				currentText = currentText.slice(0, -1);
+				document.title = currentText;
+				charIndex--;
+				setTimeout(backspaceTitle, backspaceSpeed);
+			} else {
+				textIndex = (textIndex + 1) % textArray.length;
+				setTimeout(typeTitle, 500);
+			}
+		}
+		window.onload = function() {
+			typeTitle();
+		};
+		</script>
+
+   <script>
+     const songs = ["1.mp3"];
+      function fadeAndPlay() {
+        const overlay = document.getElementById("overlay");
+        const player = document.getElementById("player");
+        const randomSong = songs[Math.floor(Math.random() * songs.length)];
+        player.src = randomSong;
+        overlay.classList.add("fade-out");
+        setTimeout(() => overlay.remove(), 1000);
+        player.play();
+    }
+    </script>
+
+    <img src="images/mask.jpg" height="240px">
+    <p>komi</p>
+    <br>
+    <a href="https://t.me/thighpictures">[*] Telegram Channel</a>
+    <a href="https://tonviewer.com/nintendo3ds.ton">[*] Ton</a>
+    <a href="links.html">[*] Links</a>
+    <br>
+    <p>I am currently: <img src="https://moods.imood.com/display/uname-komi/fg-fff/trans-1/imood.gif" height="2%" alt="The current mood of komi" border="0"></p>
+    <script type="text/javascript" src="https://counter.websiteout.com/js/7/9/1042/0"></script> 
+
+    
+  </body>
+  
+</html>
