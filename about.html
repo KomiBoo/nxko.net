@@ -1,0 +1,111 @@
+<html>
+  
+  <head>
+
+    <title>nxko.net - links</title>
+
+    <style>
+      body {
+				text-align: center;
+				background-color:black;
+				text-shadow: 2px 2px 2px indigo;
+				color: white;
+			}
+      a {
+				color: purple;
+				text-shadow: 2px 2px 5px purple;
+				transition-duration: 0.9s;
+				text-decoration: none;
+        background: transparent url(images/sparkle.gif);
+			}
+			a:hover {
+				color:pink;
+				text-decoration: underline;
+			}
+      #overlay {
+				position: fixed;
+				top: 0; left: 0;
+				width: 100%; height: 100%;
+				background-color: black;
+				z-index: 9999;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: opacity 1s ease;
+				cursor: pointer;
+			}
+			#overlay.fade-out {
+				opacity: 0;
+				pointer-events: none;
+			}
+		.komi {
+			color: #bb86fc;
+			text-shadow: 0px 0px 10px rgba(187, 134, 252, 0.5); 
+			font-weight: bold; 
+			background: transparent url(images/rain.gif);
+		}
+    </style>
+    
+  </head>
+
+  <body>
+
+    
+		<script>
+		let title = document.title;
+		let currentText = '';
+		let typingSpeed = 150;
+		let backspaceSpeed = 100;
+		let textArray = ["nxko.net", "about me!!!", "not that im very interesting....."];
+		let textIndex = 0;
+		let charIndex = 0;
+
+		function typeTitle() {
+			if (charIndex < textArray[textIndex].length) {
+				currentText += textArray[textIndex].charAt(charIndex);
+				document.title = currentText;
+				charIndex++;
+				setTimeout(typeTitle, typingSpeed);
+			} else {
+				setTimeout(backspaceTitle, 1000);
+			}
+		}
+
+		function backspaceTitle() {
+			if (charIndex > 0) {
+				currentText = currentText.slice(0, -1);
+				document.title = currentText;
+				charIndex--;
+				setTimeout(backspaceTitle, backspaceSpeed);
+			} else {
+				textIndex = (textIndex + 1) % textArray.length;
+				setTimeout(typeTitle, 500);
+			}
+		}
+		window.onload = function() {
+			typeTitle();
+		};
+		</script>
+
+    <h1 class="komi">About Me</h1><br>
+      <p>i am 16 and from england and i love to sleep</p><br>
+      <p>i dont do much</p><br>
+      <p>im doing a-level computer science and my github can be found <a href="https://github.com/komiboo">here</a></p><br>
+      <p>i listen to goth rock... and kanye west</p><br>
+      <p>people say im scary, some however say im cute</p><br>
+      <p>i plan to learn rust and c++ cuz i did start in 2024 and i stopped</p><br>
+      <p>i love to talk to people</p><br>
+      <p>im very mentally unwell and have some mentall illnesses blah blah blah im sure u will b fine</p><br>
+      <p>i dont know much about myself tbf...</p><br>
+      <p>something about a hacker forum blah blah blah</p><br>
+      <p>something about kitchen fans</p><br>
+      <p>i think thats it tbf</p><br>
+
+    
+    
+
+
+    
+  </body>
+  
+</html>
